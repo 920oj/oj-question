@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let Questions = new Schema({
+let Question = new Schema({
   index: Number,
   name: String,
   content: String,
@@ -10,6 +10,10 @@ let Questions = new Schema({
   isAnswered: boolean
 })
 
+Question.plugin(AutoIncrement, {
+  inc_filed: 'index'
+});
+
 mongoose.connect('mongodb://127.0.0.1/ojq');
 
-exports.Questions = mongoose.model('Questions', Questions);
+exports.Question = mongoose.model('Question', Question);

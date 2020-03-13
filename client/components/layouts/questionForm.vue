@@ -1,7 +1,8 @@
 <template>
   <div class="question-form">
     <p class="question-form-description">OJに質問しよう！</p>
-    <textarea class="question-box" v-model="question" />
+    <input class="question-name" v-model="name" type="text" placeholder="名無しさん">
+    <textarea class="question-box" v-model="question" placeholder="質問内容を200文字以内で入力" />
     <p class="question-form-count" :class="{'count-red': !sendAvailable}"> {{formCount}}&#47;200文字 </p>
     <div v-if="sendAvailable">
       <Btn title="質問する" />
@@ -21,6 +22,7 @@ export default {
   },
   data() {
     return {
+      name: '',
       question: '',
     }
   },
@@ -69,9 +71,18 @@ export default {
   color: #DE3163;
 }
 
-.question-box {
+.question-name {
   color: #282828;
   margin-top: 30px;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #F9F9F9;
+  box-sizing: border-box;
+}
+
+.question-box {
+  color: #282828;
+  margin-top: 10px;
   width: 100%;
   height: 10rem;
   border: 1px solid #F9F9F9;

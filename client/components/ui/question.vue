@@ -6,13 +6,19 @@
       <div class="question-content">
         <p class="question-content-name">{{name}} さんからの質問</p>
         <p class="question-content-detail">{{content}}</p>
-        <p class="question-content-date">{{date}}</p>
+        <p class="question-content-date">{{convertDate(date)}}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
+const moment = require("moment")
+moment.locale('ja')
+require('moment-timezone')
+moment.tz.setDefault('Asia/Tokyo')
+
 export default {
   props: [
     'content',
@@ -20,14 +26,21 @@ export default {
     'date',
     'isanswered'
   ],
+  methods: {
+    convertDate: function(date) {
+      return moment(date).format('YYYY年M月D日 HH:mm:ss')
+    }
+  }
 }
 </script>
 
 <style>
 
 .question {
-  margin: 10px 0;
+  margin: 20px 0;
   background: #FFF;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .question-wrapper {

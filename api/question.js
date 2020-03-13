@@ -27,3 +27,5 @@ router.post('/question', function(req, res, next) {
   });
 
 })
+
+module.exports = router

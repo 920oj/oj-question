@@ -20,9 +20,11 @@ router.post('/question', function(req, res, next) {
   new_question.save((err, save) => {
     if(err) {
       console.log(err);
+      res.send(err);
     }
     else {
       console.log(save);
+      res.send(save);
     }
   });
 

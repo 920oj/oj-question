@@ -51,6 +51,7 @@ export default {
       this.$axios.$post('/api/question', formData)
         .then(response => {
           console.log(response)
+          console.log(`localhost/question/${response.index}に移動します`)
         })
         .catch(err => {
           console.log(err)

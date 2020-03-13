@@ -13,7 +13,7 @@ let Question = new Schema({
 
 autoIncrement.initialize(mongoose.connection);
 
-Question.plugin(autoIncrement.plugin, 'index');
+Question.plugin(autoIncrement.plugin, { model: 'Question', field: 'index'});
 
 mongoose.connect('mongodb://127.0.0.1/ojq');
 

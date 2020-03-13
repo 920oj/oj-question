@@ -10,6 +10,7 @@
 }
 
 body {
-  background: #FAFBFC;
+  color: #282828;
+  background: #F9F9F9;
 }
 </style>

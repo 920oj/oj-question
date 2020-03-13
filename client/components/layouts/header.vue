@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-wrapper">
-      <p>OJの質問BOX</p>
+      <p>OJの質問BOX(β)</p>
     </div>
   </div>
 </template>

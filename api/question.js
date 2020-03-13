@@ -8,6 +8,12 @@ app.use(express.urlencoded({ extended: true }));
 
 const Question = database.Question;
 
+router.get('/question', function(req, res, next) {
+  Question.find({}, function(err, result) {
+    res.send(result);
+  })
+})
+
 router.post('/question', function(req, res, next) {
   let new_question = new Question({
     name: req.body.name || '名無しさん',
@@ -27,7 +33,6 @@ router.post('/question', function(req, res, next) {
       res.send(save);
     }
   });
-
 })
 
 module.exports = router

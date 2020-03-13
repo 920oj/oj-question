@@ -5,13 +5,18 @@
       <div class="question-form-wrapper">
         <QuestionForm />
       </div>
+      <div class="question-list-wrapper">
+        <h3>これまでの質問</h3>
+        <QuestionList :list="display_question_list[current - 1]" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Header from '~/components/layouts/header.vue'
-import QuestionForm from'~/components/layouts/questionForm.vue'
+import QuestionForm from '~/components/layouts/questionForm.vue'
+import QuestionList from '~/components/layouts/questionList.vue';
 
 export default {
   data() {
@@ -25,6 +30,7 @@ export default {
   components: {
     Header,
     QuestionForm,
+    QuestionList,
   },
 
   mounted() {
@@ -63,5 +69,11 @@ export default {
   width: 90%;
   margin: 30px auto;
   max-width: 600px;
+}
+
+.question-list-wrapper h3 {
+  text-align: center;
+  margin: 50px 0;
+  margin-bottom: 30px;
 }
 </style>

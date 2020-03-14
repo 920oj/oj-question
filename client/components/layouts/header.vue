@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-wrapper">
-      <p>OJの質問BOX(β)</p>
+      <nuxt-link to="/"><p>OJの質問BOX(β)</p></nuxt-link>
     </div>
   </div>
 </template>

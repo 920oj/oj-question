@@ -13,4 +13,8 @@ body {
   color: #282828;
   background: #F9F9F9;
 }
+
+a {
+  text-decoration: none;
+}
 </style>

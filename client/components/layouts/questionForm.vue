@@ -1,7 +1,7 @@
 <template>
   <div class="question-form">
     <p class="question-form-description">OJに質問しよう！</p>
-    <input class="question-name" v-model="name" type="text" placeholder="名無しさん">
+    <input class="question-name" v-model="name" type="text" placeholder="名無し">
     <textarea class="question-box" v-model="question" placeholder="質問内容を200文字以内で入力" />
     <p class="question-form-count" :class="{'count-red': !sendAvailable}"> {{formCount}}&#47;200文字 </p>
     <div v-if="sendAvailable" @click="sendQuestion()">

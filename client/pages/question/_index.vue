@@ -1,6 +1,5 @@
 <template>
   <div class="question-page">
-    <Header />
     <div class="question-page-wrapper">
       <Question 
         :content="question.content" 

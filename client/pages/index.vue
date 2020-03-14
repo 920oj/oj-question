@@ -1,6 +1,5 @@
 <template>
   <div class="index">
-    <Header />
     <div class="index-wrapper">
       <div class="question-form-wrapper">
         <QuestionForm />

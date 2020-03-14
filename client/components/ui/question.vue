@@ -1,6 +1,6 @@
 <template>
   <div class="question">
-    <div class="question-wrapper">
+    <div class="question-wrapper" @click="$router.push(`/question/${index}`)">
       <div class="question-status" v-if="isanswered">回答済</div>
       <div class="question-status" v-if="!isanswered">未回答</div>
       <div class="question-content">
@@ -24,7 +24,8 @@ export default {
     'content',
     'name',
     'date',
-    'isanswered'
+    'isanswered',
+    'index'
   ],
   methods: {
     convertDate: function(date) {

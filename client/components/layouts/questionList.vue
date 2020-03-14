@@ -5,7 +5,8 @@
         :content="item.content" 
         :name="item.name" 
         :date="item.createdAt" 
-        :isanwered="item.isAnswered" 
+        :isanwered="item.isAnswered"
+        :index="item.index" 
       />
     </div>
   </div>

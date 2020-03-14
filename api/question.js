@@ -1,12 +1,24 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+require('dotenv').config()
+const env = process.env
 const database = require('./database');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 const Question = database.Question;
+
+const authCheck = function(req, res, next) {
+  const api = req.headers['x-api-key'];
+  if(api != env.X-API-KEY) {
+    res.status(401);
+    res.end('401 Unauthorized.');
+  }
+  next();
+}
+
 
 router.get('/question', function(req, res, next) {
   Question.find({}, function(err, result) {
@@ -56,7 +68,7 @@ router.get('/question/:index', function(req, res, next) {
   })
 })
 
-router.put('/question/:index', function(req, res, next) {
+router.put('/question/:index', authCheck, function(req, res, next) {
   let indexId = req.params.index;
   let query = Question.findOne( {index: indexId} ).exec();
   query.then(function(result) {
@@ -90,7 +102,7 @@ router.put('/question/:index', function(req, res, next) {
   })
 })
 
-router.delete('/question/:index', function(req, res, next) {
+router.delete('/question/:index', authCheck, function(req, res, next) {
   let indexId = req.params.index;
   Question.remove({index: indexId})
     .then(function() {

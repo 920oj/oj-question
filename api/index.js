@@ -1,5 +1,9 @@
 const express = require("express");
 const router = express.Router();
+
+require('dotenv').config()
+const env = process.env
+
 const database = require("./database.js");
 
 const app = express();

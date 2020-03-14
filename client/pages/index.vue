@@ -29,6 +29,13 @@ import QuestionList from '~/components/layouts/questionList.vue';
 import Btn from '~/components/ui/btn.vue'
 
 export default {
+
+  head() {
+    return {
+      title: 'OJの質問BOX（β）'
+    } 
+  },
+
   data() {
     return {
       current: 1,

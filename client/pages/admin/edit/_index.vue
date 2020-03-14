@@ -25,6 +25,12 @@ import Btn from '~/components/ui/btn.vue'
 
 export default {
 
+  head() {
+    return  {
+      title: '管理画面 | OJの質問BOX（β）'
+    }
+  },
+
   data() {
     return {
       answer: '',

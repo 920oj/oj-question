@@ -43,6 +43,12 @@ require('moment-timezone')
 moment.tz.setDefault('Asia/Tokyo')
 
 export default {
+  head() {
+    return {
+      title: this.sliceTitle(this.question.content) + ' | OJの質問BOX（β）'
+    }
+  },
+
   components: {
     Header,
     QuestionForm,
@@ -53,6 +59,9 @@ export default {
   methods: {
     convertDate: function(date) {
       return moment(date).format('YYYY年M月D日 HH:mm:ss')
+    },
+    sliceTitle: function(text) {
+      return text.slice(0, 20)
     }
   },
 

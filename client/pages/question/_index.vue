@@ -6,7 +6,7 @@
         :content="question.content" 
         :name="question.name" 
         :date="question.createdAt" 
-        :isanwered="question.isAnswered"
+        :isanswered="question.isAnswered"
         :index="question.index"
       />
       <div class="question-page-contents-wrapper">

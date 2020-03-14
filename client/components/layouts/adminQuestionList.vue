@@ -36,10 +36,11 @@ export default {
       this.$router.push(`/admin/edit/${index}`)
     },
     deleteQuestion: function(index) {
-      const headers = {
-        'x-api-key': process.env.KEY
-      }
-      axios.delete(`/api/question/${index}`, headers)
+      axios.delete(`/api/question/${index}`, {
+        headers: {
+          'x-api-key': process.env.KEY
+        }
+      })
       location.reload();
     }
   }

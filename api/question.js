@@ -35,4 +35,24 @@ router.post('/question', function(req, res, next) {
   });
 })
 
+router.get('/question/:index', function(req, res, next) {
+  let indexId = req.params.index;
+  let query = Question.findOne( {index: indexId} ).exec();
+  query.then(function(result) {
+    if(result == null) {
+      res.status(404);
+      res.end('404 Not Found.')
+    }
+    else {
+      console.log(result);
+      res.send(result);
+    }
+  }, function(err) {
+    console.log(err);
+    res.status(400);
+    res.end('400 Bad Request.');
+    throw err;
+  })
+})
+
 module.exports = router

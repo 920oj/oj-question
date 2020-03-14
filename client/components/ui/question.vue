@@ -1,8 +1,8 @@
 <template>
   <div class="question">
     <div class="question-wrapper" @click="$router.push(`/question/${index}`)">
-      <div class="question-status" v-if="isanswered">回答済</div>
-      <div class="question-status" v-if="!isanswered">未回答</div>
+      <div class="question-status answered" v-if="isanswered">回答済</div>
+      <div class="question-status not-answered" v-if="!isanswered">未回答</div>
       <div class="question-content">
         <p class="question-content-name">{{name}} さんからの質問</p>
         <p class="question-content-detail">{{content}}</p>
@@ -49,13 +49,22 @@ export default {
 }
 
 .question-status {
-  background: rgba(34,166,224,1);
   width: 3rem;
   padding: 5px 10px;
-  color: #FFF;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.answered {
+  background: rgba(34,166,224,1);
+  color: #FFF;
+}
+
+.not-answered {
+  background: #FFF;
+  color: rgba(34,166,224,1);
+  border: 1px solid rgba(34,166,224,1);
 }
 
 .question-content {

@@ -90,4 +90,15 @@ router.put('/question/:index', function(req, res, next) {
   })
 })
 
+router.delete('/question/:index', function(req, res, next) {
+  let indexId = req.params.index;
+  Question.remove({index: indexId})
+    .then(function() {
+      res.json({message: 'Success.'});
+    })
+    .catch(function(err) {
+      console.log(err);
+    })
+})
+
 module.exports = router

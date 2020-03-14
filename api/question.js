@@ -12,7 +12,7 @@ const Question = database.Question;
 
 const authCheck = function(req, res, next) {
   const api = req.headers['x-api-key'];
-  if(api != env.X-API-KEY) {
+  if(api != env.KEY) {
     res.status(401);
     res.end('401 Unauthorized.');
   }

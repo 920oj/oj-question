@@ -1,3 +1,5 @@
+require('dotenv').config();
+const { KEY } = process.env
 
 module.exports = {
   mode: 'universal',
@@ -53,6 +55,9 @@ module.exports = {
     extend (config, ctx) {
     
     }
-  }
+  },
 
+  env: {
+    KEY
+  }
 }

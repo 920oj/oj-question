@@ -1,22 +1,15 @@
 <template>
-  <div class="index">
-    <Header />
-    <div class="index-wrapper">
-      <div class="question-form-wrapper">
-        <QuestionForm />
+  <div class="admin-index">
+    <div class="question-list-wrapper">
+      <AdminQuestionList :list="display_question_list[current - 1]" />
+    </div>
+    
+    <div class="pagination">
+      <div class="pagination-left-btn" v-if="pagination_style == 'common' || pagination_style == 'left_only'" @click="movePage(-1)">
+        <Btn title="前へ" />
       </div>
-      <div class="question-list-wrapper">
-        <h3>これまでの質問</h3>
-        <QuestionList :list="display_question_list[current - 1]" />
-      </div>
-      
-      <div class="pagination">
-        <div class="pagination-left-btn" v-if="pagination_style == 'common' || pagination_style == 'left_only'" @click="movePage(-1)">
-          <Btn title="前へ" />
-        </div>
-        <div class="pagination-right-btn" v-if="pagination_style == 'common' || pagination_style == 'right_only'" @click="movePage(1)">
-          <Btn title="次へ" />
-        </div>
+      <div class="pagination-right-btn" v-if="pagination_style == 'common' || pagination_style == 'right_only'" @click="movePage(1)">
+        <Btn title="次へ" />
       </div>
     </div>
   </div>
@@ -25,7 +18,7 @@
 <script>
 import Header from '~/components/layouts/header.vue'
 import QuestionForm from '~/components/layouts/questionForm.vue'
-import QuestionList from '~/components/layouts/questionList.vue';
+import AdminQuestionList from '~/components/layouts/adminQuestionList.vue';
 import Btn from '~/components/ui/btn.vue'
 
 export default {
@@ -41,7 +34,7 @@ export default {
   components: {
     Header,
     QuestionForm,
-    QuestionList,
+    AdminQuestionList,
     Btn,
   },
 
@@ -91,26 +84,11 @@ export default {
       question_list
     }
   },
-
 }
 </script>
 
 <style scoped>
-.index-wrapper {
-  width: 90%;
-  margin: 30px auto;
-  max-width: 600px;
-}
-
-.question-list-wrapper h3 {
-  text-align: center;
-  margin: 50px 0;
-  margin-bottom: 30px;
-}
-
-.pagination {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.question-list-wrapper {
+  padding: 0 10px;
 }
 </style>

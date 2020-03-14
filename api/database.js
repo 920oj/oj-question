@@ -6,6 +6,7 @@ let Question = new Schema({
   index: Number,
   name: String,
   content: String,
+  answer: String,
   createdAt: Date,
   updatedAt: Date,
   isAnswered: Boolean

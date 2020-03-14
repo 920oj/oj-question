@@ -1,5 +1,8 @@
 <template>
   <div class="admin-index">
+
+    <h2 style="text-align: center; margin: 30px 0;">管理画面</h2>
+
     <div class="question-list-wrapper">
       <AdminQuestionList :list="display_question_list[current - 1]" />
     </div>
@@ -11,6 +14,10 @@
       <div class="pagination-right-btn" v-if="pagination_style == 'common' || pagination_style == 'right_only'" @click="movePage(1)">
         <Btn title="次へ" />
       </div>
+    </div>
+
+    <div @click="$router.push('/')">
+      <Btn title="トップに戻る" />
     </div>
   </div>
 </template>
@@ -88,6 +95,12 @@ export default {
 </script>
 
 <style scoped>
+
+.admin-index {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .question-list-wrapper {
   padding: 0 10px;
 }

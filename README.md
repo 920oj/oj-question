@@ -1,8 +1,21 @@
-# oj-question
+# OJの質問箱（β）
 
-> My terrific Nuxt.js project
+https://q.920oj.net/
+
+OJの質問箱（β）は、自分専用の「質問箱」クローンです。
+
+- フロントエンド: Nuxt.js
+- バックエンド: Express(Nuxt.jsのserverMiddlewareとして稼働)
+- データベース: MongoDB
+
+で構成されています。
 
 ## Build Setup
+
+- データベースを作成
+- ポート番号を変更
+- .envファイルを作成し、管理者用パスワードを設定（プロパティ名: KEY）
+- 以下のコマンドを実行
 
 ``` bash
 # install dependencies
@@ -19,4 +32,6 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Contact
+Junya Oiwa (@920oj)
+http://920oj.net/contact

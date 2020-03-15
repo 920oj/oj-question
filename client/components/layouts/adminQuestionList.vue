@@ -38,7 +38,8 @@ export default {
     deleteQuestion: function(index) {
       axios.delete(`/api/question/${index}`, {
         headers: {
-          'x-api-key': process.env.KEY
+          'x-api-key': process.env.KEY,
+          'x-csrf-token': this.$store.state.csrfToken
         }
       })
       location.reload();

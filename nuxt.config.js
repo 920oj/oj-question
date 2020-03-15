@@ -42,7 +42,7 @@ module.exports = {
 
   axios: {
     baseURL: 'http://localhost:3000',
-    proxy: true
+    proxy: true,
   },
 
   proxy: {

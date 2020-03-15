@@ -48,7 +48,10 @@ export default {
         name: this.name,
         content: this.question,
       }
-      this.$axios.$post('/api/question', formData)
+      let header = {
+        'x-csrf-token': this.$store.state.csrfToken
+      }
+      this.$axios.$post('/api/question', formData, { headers: header })
         .then(response => {
           console.log(response)
           console.log(`localhost/question/${response.index}に移動します`)

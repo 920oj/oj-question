@@ -1,5 +1,10 @@
 const express = require('express')
 const consola = require('consola')
+
+const csrf = require('csurf')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
 
@@ -19,6 +24,14 @@ async function start () {
     const builder = new Builder(nuxt)
     await builder.build()
   }
+
+  // csrfTokenを発行しセッションに格納、その後CookieにcsrfTokenを入れる設定
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }))
+  app.use(bodyParser.json())
+  app.use(cookieParser())
+  app.use(csrf({ cookie: true }))
 
   // Give nuxt middleware to express
   app.use(nuxt.render)

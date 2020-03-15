@@ -42,11 +42,11 @@ export default {
       let formData = {
         answer: this.answer,
       }
-      this.$axios.$put(`/api/question/${this.$nuxt.$route.params.index}`, formData, {
-        headers: {
-          'x-api-key': process.env.KEY
-          }
-        })
+      let header = {
+        'x-api-key': process.env.KEY,
+        'x-csrf-token': this.$store.state.csrfToken
+      }
+      this.$axios.$put(`/api/question/${this.$nuxt.$route.params.index}`, formData, { headers: header })
         .then(response => {
           console.log(response)
           console.log(`localhost/question/${this.$nuxt.$route.params.index}に移動します`)

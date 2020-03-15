@@ -52,6 +52,7 @@ export default {
         .then(response => {
           console.log(response)
           console.log(`localhost/question/${response.index}に移動します`)
+          this.$router.push(`/question/${response.index}`)
         })
         .catch(err => {
           console.log(err)

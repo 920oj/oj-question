@@ -7,7 +7,7 @@
         <li><a href="https://920oj.net/contact" target="_blank" rel="noopener">お問い合わせ</a></li>
       </ul>
     </div>
-    <p>&copy; 2019 Junya Oiwa (<a href="https://twitter.com/920oj" target="_blank" rel="noopener">@920oj</a>)</p>
+    <p>&copy; 2020 Junya Oiwa (<a href="https://twitter.com/920oj" target="_blank" rel="noopener">@920oj</a>)</p>
   </div>
 </template>
 

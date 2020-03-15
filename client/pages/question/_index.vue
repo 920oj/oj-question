@@ -44,7 +44,18 @@ moment.tz.setDefault('Asia/Tokyo')
 export default {
   head() {
     return {
-      title: this.sliceTitle(this.question.content) + ' | OJの質問BOX（β）'
+      title: this.sliceTitle(this.question.content) + ' | OJの質問BOX（β）',
+      meta: [
+        { hid: 'description', name: 'description', content: this.question.content + ' | OJの質問BOX（β）' },
+        { hid: 'og:title', name: 'og:title', content: 'OJの質問BOX（β）'},
+        { hid: 'og:url', name: 'og:url', content: 'https://q.920oj.net/' + this.$route.name},
+        { hid: 'og:type', name: 'og:type', content: 'website' },
+        { hid: 'og:description', name: 'og:description', content: this.question.content + ' | OJの質問BOX（β）'},
+        { hid: 'og:image', property: 'og:image', content: 'https://q.920oj.net/img/ojq-ojp.jpg' },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+        { hid: 'og:site_name', property: 'og:site_name', content: 'OJの質問BOX（β）' },
+        { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
+      ],
     }
   },
 
@@ -60,7 +71,7 @@ export default {
       return moment(date).format('YYYY年M月D日 HH:mm:ss')
     },
     sliceTitle: function(text) {
-      return text.slice(0, 20)
+      return text.slice(0, 30)
     }
   },
 

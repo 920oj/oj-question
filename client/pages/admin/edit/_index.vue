@@ -48,8 +48,6 @@ export default {
       }
       this.$axios.$put(`/api/question/${this.$nuxt.$route.params.index}`, formData, { headers: header })
         .then(response => {
-          console.log(response)
-          console.log(`localhost/question/${this.$nuxt.$route.params.index}に移動します`)
           this.$router.push(`/question/${this.$nuxt.$route.params.index}`)
         })
         .catch(err => {

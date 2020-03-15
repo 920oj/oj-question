@@ -19,7 +19,7 @@ module.exports = {
       { hid: 'og:url', name: 'og:url', content: 'https://q.920oj.net/'},
       { hid: 'og:type', name: 'og:type', content: 'website' },
       { hid: 'og:description', name: 'og:description', content: 'OJの質問BOX（β）は、OJに匿名で何でも質問できちゃうサービスです。プログラミングのことから今日の晩ごはんまで、何でも聞いて下さい。'},
-      { hid: 'og:image', property: 'og:image', content: 'https://q.920oj.net/img/ojq-ojp.jpg' },
+      { hid: 'og:image', property: 'og:image', content: 'https://q.920oj.net/img/ojq-ogp.jpg' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'OJの質問BOX（β）' },
       { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },

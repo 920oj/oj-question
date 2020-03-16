@@ -52,7 +52,7 @@ export default {
   },
 
   mounted() {
-    let max = Math.floor( (this.question_list.length + 10) / 10)
+    let max = Math.floor( (this.question_list.length + 9) / 10)
     let d_list = [];
     for(let i = 0; i < max; i++) {
       let j = this.question_list.slice(i * 10, (i * 10) + 10)
@@ -72,7 +72,7 @@ export default {
 
   methods: {
     judgePaginationStyle: function() {
-      if(this.max_row == 1) {
+      if(this.max_row == 0 || this.max_row == 1) {
         this.pagination_style = 'none'
       }
       else if(this.current == 1) {
